@@ -1,14 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
+
+const dummyConfig = {
+  prop_1: {
+    prop_1_1: "100",
+    prop_1_2: "100"
+  }
+};
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App
+      // sys
+      systemConfig={{ systemConfig: "systemConfig" }}
+      // app
+      applicationConfig={{ applicationConfig: "applicationConfig" }}
+      // dummy
+      dummyConfig={dummyConfig}
+    />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
